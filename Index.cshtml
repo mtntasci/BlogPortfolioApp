@@ -1,0 +1,22 @@
+@page
+@model BlogPortfolioApp.Pages.IndexModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Blog - Ana Sayfa</title>
+</head>
+<body>
+    <h1>Blog Ana Sayfası</h1>
+    <p>Makale ekleyin, görüntüleyin veya düzenleyin!</p>
+
+    <a href="/Articles/Create">Yeni Makale Ekle</a>
+    <ul>
+        @foreach (var article in Model.Articles)
+        {
+            <li><a href="/Articles/Details/@article.Id">@article.Title</a> - @article.PublishedDate.ToShortDateString()</li>
+        }
+    </ul>
+</body>
+</html>
